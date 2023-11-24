@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary-color-1: #000000; /* TEXT  */
+  --primary-color-2: #f5f6f6; /* BRIGHT [WHITE]  */
+  --primary-color-3: #ffffff; /* field bg */
+  --primary-color-4: #4f4f4f; /* field border  */
+  --primary-color-5: #ffffff; /* active field border */
+  --primary-color-6: #015cc8; /* active field bg  */
+
+  --primary-color-7: #757586; /* preview text */
+
+
+  --primary-color-8: ##000000; /* a color */
+  
+  
+  
+
+  --body-font-family:'Montserrat', sans-serif;
+  --headline-font:'Montserrat', sans-serif;
+  --title-font-size: 12px; /* error message */
+  --title-font-weight: 500;
+  --subheader-font-size: 16px; /* SubTitles : 10 / 12pt Medium */
+  --subheader-font-weight: 700;
+  --body-font-size: 16px; /* Body : 8 / 12pt Light / Reg  */
+  --body-font-weigh: 400;
+  --smallprint-font-size: 6px; /* 
+    Smallprint : 6pt / 6pt Light / Reg / Med*/
+  --smallprint-font-weigh: 300;
+}
+/*  */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+p {
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weigh);
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+/* Targets the entire form. */
+#pardot-form {
+  padding: 50px 31.25px;
+  background:  #110441;
+}
+/* targets the form rows, including the submit button, excluding the error message on top */
+#pardot-form .form-row {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+/* Targets the rows that are in a column with more than one field in one line  */
+#pardot-form .form-row > .col,
+#pardot-form .form-row > [class*="col-"] {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+/* Base styles for all form fields */
+#pardot-form input.text,
+#pardot-form textarea.standard,
+#pardot-form select,
+#pardot-form input.date {
+  text-transform: none;
+  letter-spacing: normal;
+  color: #0c0c0d;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  outline: none;
+  transition: border 0.3s ease 0s;
+  border:1px solid  #110441;
+  border-radius: 5px;
+  background-color: #ffffff;
+  appearance: none;
+  font-family: var(--body-font-family);
+  padding: 12px 28px;
+  margin: 14px 0px 0px;   
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#pardot-form input.text:focus,
+#pardot-form textarea.standard:focus,
+#pardot-form select:focus,
+#pardot-form input.date:focus{
+  box-shadow: inset 0 0 0 1px white, inset 0 0 0 3px #275DC5;
+
+}
+
+#pardot-form input.btn-blue:focus {
+  
+  box-shadow: none;
+}
+
+#pardot-form input.btn-blue {
+  
+  color:#275DC5;
+}
+#pardot-form button.btn-blue {
+  
+  color:#757586;
+}
+
+
+#pardot-form textarea.standard {
+  min-height: 30px;
+}
+
+/* Hide default dropdown arrow */
+#pardot-form select {
+  cursor: pointer;
+  appearance: auto;
+  border: 1px solid var(--primary-color-4);
+  -moz-appearance: auto;
+  -webkit-appearance: auto;
+}
+
+#pardot-form .form-field.column-2-1.pd-select:before,
+#pardot-form .form-field.column-3-1.pd-select:before,
+#pardot-form .form-field.column-3-2.pd-select:before {
+  right: 32px;
+}
+
+#pardot-form .form-group {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pardot-form .form-field.column-2-1.pd-select:before,
+#pardot-form .form-field.column-3-1.pd-select:before,
+#pardot-form .form-field.column-3-2.pd-select:before {
+  right: 32px;
+}
+
+/* Targets the autofill icon inside the input fields */
+#pardot-form .col-auto {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: var(--primary-color-4);
+}
+/* targets the name of the field(First name, Last name, etc) */
+#pardot-form label.field-label {
+  display: none;
+  font-weight: normal;
+  margin-bottom: 10px;
+  color: var(--primary-color-1);
+}
+/* Targets the '*' sign in the required fields
+#pardot-form .required label.field-label::before {
+     content: "*";
+     padding-right: 5px;
+     color: var(--secondary-color-2);
+ } */
+
+#pardot-form #resubscribeIndicator {
+  display: none !important;
+}
+
+/* .error —Targets form errors. */
+/* #pardot-form p —Targets all form content, and lets you adjust the margin and padding. */
+/* Targets the error area that comes on top including the text, background, etc  */
+#pardot-form p.errors {
+  display: none;
+}
+
+/* Targets the '*' sign in the required fields
+#pardot-form .required label.field-label:after {
+  content: "*";
+  padding-left: 5px;
+  color: var(--primary-color-1);
+} */
+
+/* Targets the text that comes when the required field is not filled in. e.g 'This field is required' */
+#pardot-form p.error.no-label {
+  background:  #fff6f6;
+  padding: 17px 28px;
+  margin: 14px 0px 0px;   
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 5px;
+  color: #973937;
+  margin-bottom: 0;
+
+  
+}
+
+#pardot-form .error input,
+#pardot-form .error select,
+#pardot-form .error textarea {
+ border: none;
+}
+
+::placeholder {
+  color: var(--primary-color-1);
+}
+
+::-webkit-input-placeholder {
+  color: var(--primary-color-1);
+}
+
+::-moz-placeholder {
+  color: var(--primary-color-1);
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: var(--primary-color-1);
+}
+
+:-moz-placeholder {
+  color: var(--primary-color-1);
+  opacity: 1;
+}
+/* Target the checkbox when ticked */
+#pardot-form .pd-checkbox input:checked + label:before {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  background: var(--primary-color-6);
+  border: 1px solid var(--primary-color-4);
+  color: var(--primary-color-5);
+}
+/* Target the checkbox before ticked */
+#pardot-form .pd-checkbox input + label:before {
+  content: "";
+  display: block;
+  background: var(--primary-color-3);
+  vertical-align: middle;
+  border-radius: 2px;
+  width: 17px;
+  height: 17px;
+  padding: 0px;
+  margin-right: 10px;
+  margin-top: 2px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.2;
+  position: absolute;
+  border: 1px solid var(--primary-color-4);
+  left: 0;
+  top: 35%;
+  transform: translateY(-50%);
+}
+
+#pardot-form .pd-checkbox input {
+  opacity: 0;
+  position: absolute;
+}
+
+#pardot-form .pd-checkbox label.inline {
+  display: inline-block;
+  margin-bottom: 0px;
+  padding-left: 25px;
+  padding-right: 30px;
+  position: relative;
+  outline: 0;
+  color: var(--primary-color-1);
+}
+
+#pardot-form .pd-checkbox span {
+  display: block;
+}
+
+#pardot-form .no-label label.inline {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#pardot-form span.value {
+  width: 100%;
+}
+
+#pardot-form .pd-radio span {
+  display: inline-block;
+}
+
+#pardot-form .pd-radio label.inline {
+  margin-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 30px;
+  color: var(--primary-color-1);
+  font-size: 16px;
+}
+
+form.form{
+    font: Arial;
+}
+
+#pardot-form form.form input.text:blur {
+  background-color: rgb(232, 240, 254) !important;
+}
+
+
+a {
+  color: var(--primary-color-8);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover{
+    color: var(--primary-color-8);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+
+/* Targets the 'submit' button before pressing it and before hover */
+.btn-blue {
+  min-width: 50px;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  padding: 6.5px 18px;
+  margin: 0px  auto;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid #ff3e51;
+  text-decoration: none;
+  color: #ffffff;
+  background: transparent;
+  white-space: nowrap;
+  z-index: 0;  
+}
+.btn-blue:hover {
+  
+  background: #ff1a30;
+ 
+}
+
+.btn-blue:active {
+  border: 1px solid #f00018;
+  background: #f00018;
+  box-shadow: 0;
+ 
+}
+.btn-blue:active {
+  border: 1px solid #f00018;
+  background: #f00018;
+  box-shadow: 0;
+ 
+}
+.container {  
+    width:100%;
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+ }  
+

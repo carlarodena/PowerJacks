@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="https://goto.sportradar.com" >
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="%%description%%"/>
+<title>%%title%%</title>
+<!-- Bootstrap style classes -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Font Awesome icons -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+        
+        <style>
+      /* Style the placeholders for text inputs and textareas */
+#pardot-form .form-field input[type='text']::placeholder,
+#pardot-form .form-field textarea::placeholder {
+    color: #757586; /* Change the color */
+}
+
+/* Style the placeholders for required text inputs and textareas with asterisks */
+#pardot-form .form-field.required input[type='text']::placeholder,
+#pardot-form .form-field.required textarea::placeholder {
+    color: #757586; /* Change the color */
+}
+
+
+
+
+ .interested-in label {
+    display: flex;
+    color: #757586; /* Change the color */
+}
+
+        </style>
+</head>
+<body>
+%%content%%
+</body>
+</html>
+
+
+<form accept-charset="UTF-8" method="post" action="%%form-action-url%%" class="form" id="pardot-form">
+    %%form-opening-general-content%%
+
+    %%form-if-thank-you%%
+    %%form-javascript-focus%%
+    %%form-thank-you-content%%
+    %%form-thank-you-code%%
+    %%form-end-if-thank-you%%
+
+    %%form-if-display-form%%
+
+    %%form-before-form-content%%
+    %%form-if-error%%
+    <p class="errors">There was a problem with your submission. Please review the fields below.</p>
+    %%form-end-if-error%%
+
+    <div class="form-row">
+        %%form-start-loop-fields%%
+        <div class="form-group form-field %%form-field-css-classes%% %%form-field-class-type%% %%form-field-class-required%% %%form-field-class-hidden%% %%form-field-class-no-label%% %%form-field-class-error%% %%form-field-dependency-css%%">
+            %%form-if-field-label%%
+            <label class="field-label" for="%%form-field-id%%">%%form-field-label%%</label>
+            %%form-end-if-field-label%%
+            %%form-field-input%%
+            %%form-if-field-description%%
+            <span class="description">%%form-field-description%%</span>
+            %%form-end-if-field-description%%
+
+            <div id="error_for_%%form-field-id%%" style="display:none"></div>
+            %%form-field-if-error%%
+            <p class="error no-label">%%form-field-error-message%%</p>
+            %%form-field-end-if-error%%
+        </div>
+        %%form-end-loop-fields%%
+    </div>
+    %%form-spam-trap-field%%
+
+    <!-- forces IE5-8 to correctly submit UTF8 content -->
+    <input name="_utf8" type="hidden" value="&#9731;" />
+
+    <div class="form-row">
+        <div class="form-group container">
+            <button type="submit" class="btn-blue slide-right" accesskey="s">%%form-submit-button-text%%  </button>
+        </div>
+    </div>
+    %%form-after-form-content%%
+
+    %%form-end-if-display-form%%
+
+    %%form-javascript-link-target-top%%
+
+
+<script>
+    // Function to set placeholders and remove labels for non-checkbox fields
+    function setPlaceholdersAndRemoveLabelsForNonCheckboxFields() {
+        var nonCheckboxFields = document.querySelectorAll(".form-field:not(.pd-checkbox) input[type='text'], .form-field:not(.pd-checkbox) textarea");
+        nonCheckboxFields.forEach(function (field) {
+            var label = field.parentElement.querySelector("label.field-label");
+            if (label) {
+                var labelText = label.textContent.trim();
+                if (labelText) {
+                    if (field.classList.contains("required")) {
+                        labelText += " *"; // Add an asterisk to required fields
+                    }
+                    field.setAttribute("placeholder", labelText);
+                    label.style.display = "none"; // Hide the label for non-checkbox fields
+                }
+            }
+        });
+    }
+
+    // Call the function to set placeholders and remove labels for non-checkbox fields
+    setPlaceholdersAndRemoveLabelsForNonCheckboxFields();
+
+    // Function to handle checklist item clicks
+    function handleChecklistItemClick(event) {
+        var checkbox = event.target;
+
+        // Check if any non-checkbox fields are empty
+        var nonCheckboxFields = document.querySelectorAll(".form-field:not(.pd-checkbox) input[type='text'], .form-field:not(.pd-checkbox) textarea");
+        var anyNonCheckboxFieldEmpty = Array.from(nonCheckboxFields).some(function (field) {
+            return !field.value.trim();
+        });
+
+        if (anyNonCheckboxFieldEmpty) {
+            nonCheckboxFields.forEach(function (field) {
+                if (!field.value.trim()) {
+                    field.classList.add("error"); // Add error class to non-checkbox fields
+                } else {
+                    field.classList.remove("error"); // Remove error class if field is filled
+                }
+            });
+        } else {
+            nonCheckboxFields.forEach(function (field) {
+                field.classList.remove("error"); // Remove error class from non-checkbox fields
+            });
+        }
+    }
+
+    // Add event listeners to all checklist items
+    var checklistItems = document.querySelectorAll(".checklist-item input[type='checkbox']");
+    checklistItems.forEach(function (item) {
+        item.addEventListener("click", handleChecklistItemClick);
+    });
+</script>
+<script>
+    function setPlaceholdersForRequiredFields() {
+        var requiredFields = document.querySelectorAll(".form-field.required input[type='text'], .form-field.required textarea");
+        requiredFields.forEach(function (field) {
+            var label = field.parentElement.querySelector("label.field-label");
+            var labelText = label.textContent.trim();
+            if (labelText) {
+                field.setAttribute("placeholder", labelText + " *");
+            }
+        });
+    }
+
+    setPlaceholdersForRequiredFields();
+</script>
+
+
+
+
+
+</form>
+
+

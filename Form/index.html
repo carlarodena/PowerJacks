@@ -1,0 +1,383 @@
+<style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ 
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  p {
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-size: 16px; 
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+  }
+  /* Targets the entire form. */
+  #pardot-form {
+    padding: 50px 31.25px;
+    background:  #110441;
+  }
+  
+  /* targets the form rows, including the submit button, excluding the error message on top */
+  #pardot-form .form-row {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+  /* Targets the rows that are in a column with more than one field in one line  */
+  #pardot-form .form-row > .col,
+  #pardot-form .form-row > [class*="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  /* Base styles for all form fields */
+  #pardot-form input.text,
+  #pardot-form textarea.standard,
+  #pardot-form select,
+  #pardot-form input.date {
+    text-transform: none;
+    letter-spacing: normal;
+    color: #0c0c0d;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    outline: none;
+    transition: border 0.3s ease 0s;
+    border:1px solid  #110441;
+    border-radius: 5px;
+    background-color: #ffffff;
+    appearance: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 28px;
+    margin: 0px 0px;   
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  #pardot-form input.text:focus,
+  #pardot-form textarea.standard:focus,
+  #pardot-form select:focus,
+  #pardot-form input.date:focus{
+    box-shadow: inset 0 0 0 1px white, inset 0 0 0 3px #275DC5;
+  
+  }
+ 
+  
+ 
+  
+  
+  #pardot-form textarea.standard {
+    min-height: 30px;
+  }
+  
+  /* Hide default dropdown arrow */
+  #pardot-form select {
+    cursor: pointer;
+    appearance: auto;
+    border: none;
+    -moz-appearance: auto;
+    -webkit-appearance: auto;
+  }
+  
+  #pardot-form .form-field.column-2-1.pd-select:before,
+  #pardot-form .form-field.column-3-1.pd-select:before,
+  #pardot-form .form-field.column-3-2.pd-select:before {
+    right: 32px;
+  }
+  
+  #pardot-form .form-group {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  #pardot-form .form-field.column-2-1.pd-select:before,
+  #pardot-form .form-field.column-3-1.pd-select:before,
+  #pardot-form .form-field.column-3-2.pd-select:before {
+    right: 32px;
+  }
+  
+  /* Targets the autofill icon inside the input fields */
+  #pardot-form .col-auto {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #4f4f4f;
+  }
+  /* targets the name of the field(First name, Last name, etc) */
+  #pardot-form label.field-label {
+    display: none;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color:  #000000;
+  }
+  /* Targets the '*' sign in the required fields
+  #pardot-form .required label.field-label::before {
+       content: "*";
+       padding-right: 5px;
+       color: black;
+   } */
+  
+  #pardot-form #resubscribeIndicator {
+    display: none !important;
+  }
+  
+  /* .error —Targets form errors. */
+  /* #pardot-form p —Targets all form content, and lets you adjust the margin and padding. */
+  /* Targets the error area that comes on top including the text, background, etc  */
+  #pardot-form p.errors {
+    display: none;
+  }
+  
+  /* Targets the '*' sign in the required fields
+  #pardot-form .required label.field-label:after {
+    content: "*";
+    padding-left: 5px;
+    color:  #000000;
+  } */
+  
+  /* Targets the text that comes when the required field is not filled in. e.g 'This field is required' */
+  #pardot-form p.error.no-label {
+    background:  #fff6f6;
+    padding: 17px 28px;
+    margin: 14px 0px 0px;   
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 5px;
+    color: #973937;
+    margin-bottom: 0;
+  
+    
+  }
+  
+  #pardot-form .error input,
+  #pardot-form .error select,
+  #pardot-form .error textarea {
+   border: none;
+  }
+  
+  ::placeholder {
+    color:  #000000;
+  }
+  
+  ::-webkit-input-placeholder {
+    color:  #000000;
+  }
+  
+  ::-moz-placeholder {
+    color:  #000000;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color:  #000000;
+  }
+  
+  :-moz-placeholder {
+    color:  #000000;
+    opacity: 1;
+  }
+  /* Target the checkbox when ticked */
+  #pardot-form .pd-checkbox input:checked + label:before {
+    content: "\f00c";
+    font-family: "FontAwesome";
+    background:  #ffffff;
+    border: 1px solid none;
+    color:  #4f4f4f; 
+  }
+  /* Target the checkbox before ticked */
+  #pardot-form .pd-checkbox input + label:before {
+    content: "";
+    display: block;
+    background: #ffffff;
+    vertical-align: middle;
+    border-radius: 2px;
+    width: 17px;
+    height: 17px;
+    padding: 0px;
+    margin-right: 10px;
+    margin-top: 2px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.2;
+    position: absolute;
+    border: 1px solid none;
+    left: 0;
+    top: 35%;
+    transform: translateY(-50%);
+  }
+  
+  #pardot-form .pd-checkbox input {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  #pardot-form .pd-checkbox label.inline {
+    display: inline-block;
+    margin-bottom: 0px;
+    padding-left: 25px;
+    padding-right: 30px;
+    position: relative;
+    outline: 0;
+    color: #000000;
+  }
+  
+  #pardot-form .pd-checkbox span {
+    display: block;
+  }
+  
+  #pardot-form .no-label label.inline {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  #pardot-form span.value {
+    width: 100%;
+  }
+  
+  #pardot-form .pd-radio span {
+    display: inline-block;
+  }
+  
+  #pardot-form .pd-radio label.inline {
+    margin-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 30px;
+    color: #000000;
+    font-size: 16px;
+  }
+  
+  form.form{
+      font: Arial;
+  }
+  
+  #pardot-form form.form input.text:blur {
+    background-color: rgb(232, 240, 254) !important;
+  }
+  
+  
+  a {
+    color: #000000; 
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  a:hover{
+      color: #000000; 
+      text-decoration: none;
+      font-weight: 600;
+    }
+  
+  
+  /* Targets the 'submit' button before pressing it and before hover */
+  .btn-blue {
+    min-width: 50px;
+    font-weight: bold;
+    display: inline-block;
+    overflow: hidden;
+    padding: 6.5px 18px;
+    margin: 0px  auto;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid #ff3e51;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    white-space: nowrap;
+    z-index: 0;  
+    outline: none;
+  }
+  .btn-blue:after {
+        display: inline;
+        -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cpath stroke='%23160080' stroke-width='2' d='M10 6H0'/%3E%3C/svg%3E"),
+          url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='12' fill='none'%3E%3Cpath fill='%23160080' d='m1.412 12 6-6-6-6L0 1.412 4.588 6 0 10.588 1.412 12Z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cpath stroke='%23160080' stroke-width='2' d='M10 6H0'/%3E%3C/svg%3E"),
+          url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='12' fill='none'%3E%3Cpath fill='%23160080' d='m1.412 12 6-6-6-6L0 1.412 4.588 6 0 10.588 1.412 12Z'/%3E%3C/svg%3E");
+        -webkit-mask-position:
+          7px 50%,
+          0 50%;
+        mask-position:
+          7px 50%,
+          0 50%;
+        -webkit-mask-size:
+          0 12px,
+          auto auto;
+        mask-size:
+          0 12px,
+          auto auto;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        transition:
+          transform 0.3s var(--ease-quad-out),
+          opacity 0.15s var(--ease-quad-out),
+          -webkit-mask 0.15s var(--ease-quad-out);
+        transition:
+          mask 0.15s var(--ease-quad-out),
+          transform 0.3s var(--ease-quad-out),
+          opacity 0.15s var(--ease-quad-out);
+        transition:
+          mask 0.15s var(--ease-quad-out),
+          transform 0.3s var(--ease-quad-out),
+          opacity 0.15s var(--ease-quad-out),
+          -webkit-mask 0.15s var(--ease-quad-out);
+        margin-right: -3px;
+        margin-left: 0.5rem;
+        background-color: currentColor;
+        padding-right: 12px;
+        height: 12px;
+        content: '';
+      }
+
+
+      .btn-blue:active:after,
+      .btn-blue:focus:after,
+      .btn-blue:hover:after {
+        -webkit-mask-position:
+          0 50%,
+          4px 50%;
+        mask-position:
+          0 50%,
+          4px 50%;
+        -webkit-mask-size:
+          12px 12px,
+          auto auto;
+        mask-size:
+          12px 12px,
+          auto auto;
+      }
+
+
+
+  .btn-blue:hover {
+    
+    background: #ff1a30;
+    border: 2px solid #ff3e51;
+    outline: none;
+  }
+  
+  .btn-blue:active {
+    border: 1px solid #f00018;
+    background: #f00018;
+    box-shadow: 0;
+    border: 2px solid #ff3e51;
+    outline: none;
+  }
+  .btn-blue:focus {
+    border: 1px solid #f00018;
+    background: #f00018;
+    box-shadow: 0;
+    border: 2px solid #ff3e51;
+    outline: none;
+  }
+  .container {  
+      width:100%;
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+   }
+</style>
