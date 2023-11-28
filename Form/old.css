@@ -15,7 +15,7 @@ p {
 /* Targets the entire form. */
  #pardot-form {
     padding: 0 ;
-    background: #ffffff;
+    background: #f8f8f8;
  }
 /* targets the form rows, including the submit button, excluding the error message on top */
  #pardot-form .form-row {
@@ -51,7 +51,6 @@ p {
      border: 1px solid #cccccc;
      border-radius: 4px;
      background-color: #fff;
-     appearance: none;
      box-shadow: #66afe9;
  }
 
@@ -73,9 +72,6 @@ p {
  /* Hide default dropdown arrow */
  #pardot-form select {
      cursor: pointer;
-     appearance: none;
-     -moz-appearance: none;
-     -webkit-appearance: none;
  }
 
  #pardot-form select::-ms-expand {
@@ -159,7 +155,9 @@ p {
      padding: 16px 16px 16px 48px;
      position: relative;
  }
-
+ #pardot-form p.errors .grey-error-message{
+    color: #57656A
+ }
 /* Targets the text that comes when the required field is not filled in. e.g 'This field is required' */
 
  #pardot-form p.error.no-label {
@@ -279,8 +277,6 @@ p {
   background-color: #fff !important;
  }
 
-
-
 a {
  color: #57656A;
  text-decoration: underline;
@@ -292,7 +288,7 @@ a:hover {
 }
 
 /* Targets the 'submit' button before pressing it and before hover */
-.btn-white {
+.btn {
     position: relative;
     box-sizing: border-box;
     display: inline-block;
@@ -315,34 +311,12 @@ a:hover {
 } 
 
 
-.btn-white i {
+.btn i {
     padding-right: 8px;
 } 
 
 /* Targets the transition when hovering on the submit button */
-.slide-right::before {
-    display: none !important;
-    position: absolute;
-    content: "";
-    background: #e6e6e6;
-    border: 1px solid #adadad;
-    transition-duration: 0.3s;
-    z-index: -1;
-    inset: 0px auto auto 0px;
-    width: 0px;
-    height: 100%;
-    opacity: 1;
-} 
-
-.slide-right:hover::before {
- width: 100%;
- height: 100%;
- opacity: 1;
-} 
-
-
-.slide-right:hover {
- color: #333;
+.btn:hover {
  background: #e6e6e6;
  transition: color 0.3s ease 0s, background 0s ease 0.3s;
 }
