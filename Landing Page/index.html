@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="http://go.pardot.com" />
+    <meta charset="utf-8" />
+    <meta name="description" content="%%description%%" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>%%title%%</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+     <!-- Font Awesome icons -->
+     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- LINK THE FORM STYLES HERE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap');
+      :root {
+        /* BRANDING */
+       
+       
+
+        --brand--main--background-color: #fff;
+--brand--area--background-color-1:#9C9C9C ;
+--brand--area--background-color-2:#c4273a ;
+--brand--area--background-color-3:#f0f1f2 ;
+--brand--area--background-color-4:# ;
+--brand--footer--background-color:#57656a ;
+--brand--main-txt--color:#000000 ;
+--brand--secondary-txt--color:#57656a;
+
+--brand--footer--txt--color:#ffffff ;
+--brand--a--color:#58b1c5 ;
+--brand--a--color-hover: #337ab7;
+
+        --brand--header--font-family: 'Source Sans Pro', sans-serif;
+        --brand--h1--font-size: 40px;
+        --brand--h1--line-height: 52px; /* +4px */
+        --brand--h2--font-size: 24px;
+        --brand--h2--line-height: 28px; /* +4px */
+        --brand--h3--font-size: 20px;
+        --brand--h3--line-height: 24px; /* +4px */
+        --brand--h4--font-size: 18px;
+        --brand--h4--line-height: 22px; /* +4px */
+
+        --brand--p--font-family: 'Source Sans Pro', sans-serif;
+        --brand--p--font-size: 16px;
+        --brand--p--line-height: 20px; /* +4px */
+        --brand--smallprint--font-size: 12px;
+
+        /* UNIVERSAL */
+        /* body */
+        --body--font-family: var(--brand--p--font-family);
+        --body--color: var(--brand--main-txt--color);
+        /* h1 */
+        --h1--padding-bottom: 5px;
+        --h1--font-family: var(--brand--header--font-family);
+        --h1--font-size: var(--brand--h1--font-size);
+        --h1--line-height: var(--brand--h1--line-height);
+        --h1--color: var(--brand--main-txt--color);
+        /* h2 */
+        --h2--margin-bottom: 5px;
+        --h2--font-family: var(--brand--header--font-family);
+        --h2--font-size: var(--brand--h2--font-size);
+        --h2--line-height: var(--brand--h2--line-height);
+        --h2--color: var(--brand--main-txt--color);
+        /* p */
+        --p--font-family: var(--brand--p--font-family);
+        --p--font-size: var(--brand--p--font-size);
+        --p--line-height: var(--brand--p--line-height);
+        --p--color: var(--brand--main-txt--color);
+        /* a */
+        --a--color: var(--brand--a--color);
+        --a--text-decoration: underline;
+        /* a:hover */
+        --a-hover--color: var(--brand--a--color-hover);
+        --a-hover--text-decoration: underline;
+        /* ul */
+        --ul--padding-left: 20px;
+      }
+
+      /* --------------------------------------------------------------
+            BASE
+        ----------------------------------------------------------------- */
+
+      /* Set the base font */
+      body {
+        color: var( --body--color);
+        font-family: var(--body--font-family);
+        line-height: 27px;
+        font-size: var(--p--font-size);
+      }
+
+      /* Set heading fonts */
+      h1 { 
+        font-weight: normal;
+        font-size: var(--h1--font-size);
+      }
+      h2 {
+      }
+      h3 {
+        font-size: 20px;
+      }
+      h4 {
+      }
+
+      /* Set default background colour */
+      .bgcolour {
+        background-color: var(--brand--main--background-color);
+      }
+      /* Set custom background colours for specific blocks, also update font colours if dark BG  */
+      .header.bgcolour {
+        /* background-color: #eee; */
+      }
+      .footer.bgcolour {
+        /* background-color: #eee; */
+      }
+      .block-one.bgcolour {
+        background-color: var(--brand--main--background-color);
+        color: var(--brand--main-txt--color);
+      }
+      .form-block--wrapper{
+background-color: var( --brand--area--background-color-3);
+color: var(--brand--secondary-txt--color);
+      }
+      .block-two.bgcolour {
+        background-color: var( --brand--area--background-color-2);
+        color: var(--brand--footer--txt--color);
+      }
+
+    
+
+      /* --------------------------------------------------------------
+            TEMPLATE DETAILS
+        ----------------------------------------------------------------- */
+
+      /* Remove bottom space & adjust font */
+      .cta p {
+        margin-bottom: 0;
+        font-size: 21px;
+        font-weight: 200;
+      }
+
+      /* Remove bottom space */
+      footer p {
+        margin-bottom: 0;
+      }
+
+      /* Set dynamic width to images in block two */
+      .block-two .thumbnail img {
+        max-width: 100%;
+      }
+
+      /* Enable strong control over editable table cell widths */
+      table.editable-table {
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      /* Set default editable table cell spacing & widths */
+      table.editable-table.3col td {
+        padding: 0px 15px;
+        width: 33%;
+      }
+
+      table.editable-table.2col td {
+        padding: 0px 15px;
+        width: 50%;
+      }
+
+      /* Grey BG */
+      .grey {
+        background-color: var(--brand--footer--background-color);
+        color:var( --brand--area--background-color-1);
+      }
+
+      /* Images do not extend containers */
+      img {
+        max-width: 100%;
+      }
+      table img {
+        width: 100%;
+        max-width: 150px !important;
+      }
+
+      /* --------------------------------------------------------------
+            SPACING
+        ----------------------------------------------------------------- */
+
+      /* make element edge to edge */
+      .flush {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      /* vertical padding */
+      .vpadding {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      /* top padding only */
+      .tpadding {
+        padding-top: 20px;
+        padding-bottom: 0px;
+      }
+
+      /* side padding only */
+      .hpadding {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      /* bottom padding only */
+      .bpadding {
+        padding-top: 0px;
+        padding-bottom: 20px;
+      }
+
+      /* large vertical padding */
+      .vpaddingLG {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      /* vertical padding double */
+      .vpadding-double {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      /* vertical alignment */
+      .vcenter {
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+      }
+
+      /* spave below headings */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-bottom: 15px;
+      }
+
+      .login::before {
+        content: "\f007";
+        font-family: 'FontAwesome';
+     font-size: 15px;
+    
+}
+
+.linkedin:before {
+    content: "\f08c";
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 24px;
+}
+.facebook:before {
+    content: "\f082";
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 24px;
+}
+
+.twitter:before {
+    content: "\f099";
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 24px;
+}
+
+
+
+
+      /* space below paragraph */
+      p {
+        margin-bottom: 20px;
+      }
+
+      /* --------------------------------------------------------------
+            SOCIAL
+        ----------------------------------------------------------------- */
+
+      /* Social container spacing */
+      .social {
+        line-height: 20px;
+      }
+
+      /* Make everything within social display next to one another */
+      .social * {
+        display: inline;
+        line-height: 20px;
+      }
+
+      /* Social list spacing */
+      .social-list {
+        padding-left: 10px;
+        margin: 0px;
+      }
+
+      /* Social list display next to one another */
+      .social-list li,
+      .social-list {
+        display: inline;
+      }
+
+      /* Disable underlines on image link hover */
+      .social-list a:hover {
+        text-decoration: none;
+      }
+      
+   
+      .pre-header{
+    text-align: right;
+    color: #444444;
+    font-weight: 400;
+    padding: 8px 8px 10px;
+    letter-spacing: 0.001em;
+    border-right: solid 1px #D8D8D8;
+    display: block;
+      }
+
+      .logo-div--wrapper{
+padding-top: 20px;
+padding-bottom: 20px;
+      }
+      
+
+      /* Share button image specific style */
+      #share-buttons img {
+        width: 20px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+      }
+
+      /* --------------------------------------------------------------
+            RESPONSIVE
+        ----------------------------------------------------------------- */
+      /* xs */
+      @media (max-width: 767px) {
+        .logo {
+          text-align: center;
+          padding-bottom: 0;
+        }
+        .pull-right {
+          float: none !important;
+          text-align: center;
+        }
+        .vpadding-double {
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+        .social {
+          text-align: center;
+        }
+        .vcenter {
+          width: 100%;
+          text-align: center;
+        }
+        .edit-image {
+          width: 290px;
+          padding-bottom: 5px;
+        }
+      }
+      /* sm */
+      @media (max-width: 768px) {
+        #pardot-form.label-left .field-label {
+          width: 100%;
+          text-align: left;
+        }
+        #pardot-form.label-left input.text,
+        #pardot-form.label-left input.date,
+        #pardot-form.label-left textarea,
+        #pardot-form.label-left select {
+          width: 100%;
+        }
+        #pardot-form.label-left span.value,
+        #pardot-form.label-left .description,
+        #pardot-form.label-left .no-label > *,
+        #pardot-form.label-left .submit,
+        #pardot-form.label-left .error.no-label {
+          width: 100%;
+        }
+        #pardot-form.label-left span.value,
+        #pardot-form.label-left .description,
+        #pardot-form.label-left .no-label > *,
+        #pardot-form.label-left .submit,
+        #pardot-form.label-left .error.no-label {
+          margin-left: 0;
+        }
+        form.form p {
+          margin-left: 0px !important;
+          padding-left: 0px !important;
+        }
+        table.editable-table td {
+          display: block;
+          width: 100% !important;
+        }
+      }
+      /* md */
+      @media (max-width: 992px) {
+      }
+      /* lg */
+      @media (min-width: 1200px) {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pre-header--wrapper  "><div class="pre-header">
+        <div  pardot-region="secondary-cta" class="container">
+            <a class="login"
+            href="https://www.powerjacks.com/portal/login"
+            target="_blank"
+            style="text-align: right;
+            color: #444444;
+            font-weight: 400;
+            padding: 8px 8px 10px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #D8D8D8;"
+            > LogIn</a>
+            <a
+            href="https://www.powerjacks.com/portal/login&redirect=cad"
+            target="_blank"
+            style="text-align: right;
+            color: #444444;
+            font-weight: 400;
+            padding: 8px 8px 10px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #D8D8D8;"
+            > Configure CAD</a>
+            <a
+            href="https://www.powerjacks.com/portal/login&redirect=product_selector"
+            target="_blank"
+            style="text-align: right;
+            color: #444444;
+            font-weight: 400;
+            padding: 8px 8px 10px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #D8D8D8;"
+            > Select Product</a>
+            <a
+            href="https://www.powerjacks.com/contact-us"
+            target="_blank"
+            style="text-align: right;
+            color: #444444;
+            font-weight: 400;
+            padding: 8px 8px 10px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #D8D8D8;"
+            > Contact Us</a >
+          
+        </div>
+    </div></div>
+<div class="logo-div--wrapper container">
+    <div class="logo-div">
+        <div  pardot-region="logo">
+            <a
+            href="#"
+            style="text-decoration: none"
+            target="_blank"
+            > <img src="https://powerjacks.com/perch/resources/branding/powerjackslogostrapline-376w-h70@2x.png" alt="" style="width: 190px; height: 30px; ">
+        </div>
+    </div>
+</div>
+
+    <!-- header -->
+    <div class="block-one bgcolour">
+      <div class="container vpadding-double">
+        <div class="vpadding-double">
+          <div class="editable">
+            <h1 pardot-region="title">We're Here to Help</h1>
+          </div>
+          <div class="editable">
+            <h2 class="tagline" pardot-region="tagline">
+              Start Your Free Consultation Now
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- block-one -->
+
+    <div class="block form-block--wrapper">
+      <div class="container">
+        <div class="row vpadding">
+          <div class="col-md-8">
+            <div class="editable vpadding" pardot-region="main_content">
+              <h3>New to LenoxSoft Solutions? Let's talk.</h3>
+              <p>
+                Whether you're looking to get up and running quickly with our
+                platform, or you need to better understand how to optimize your
+                existing platform, we're ready to roll up our sleeves and help.
+                The LenoxSoft team has been providing services since 2000 for
+                B2B companies across North America.
+              </p>
+              <p>
+                We can talk you through some of the most common applications of
+                our platform and share how customers in your industry have
+                switched to LenoxSoft without looking back. We specialize in
+                platforms supporting:
+              </p>
+              <ul>
+                <li>Marketing</li>
+                <li>Sales</li>
+                <li>Supply Chain</li>
+                <li>Management</li>
+                <li>Human Resources</li>
+              </ul>
+              <p>
+                LenoxSoft is a leading provider of business solutions. We
+                inspire business leaders to be the world's future leaders of
+                technology solutions business and society. We drive global
+                business and social transformation through the fusion of
+                business, technology and an entrepreneurial mindset.
+              </p>
+            </div>
+
+            <div class="row" pardot-region="block_one_table">
+              <table class="editable-table">
+                <tr>
+                  <td class="hpadding">
+                    <h3>Customer Testimonials</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="vpadding">
+                    <div class="col-sm-2 bpadding" style="text-align: center">
+                      <img
+                        src="/images/placeholder.php?width=130&amp;height=130"
+                        alt="placeholder image"
+                      />
+                    </div>
+                    <div class="col-sm-10">
+                      <p>
+                        "Having access to Ignite Consultants is a service
+                        second-to-none. They work in conjunction with our team
+                        to identify solutions that meet our standards and amount
+                        to significant savings in our campaigns. We couldn't
+                        have asked for a better partner in this endeavor." -
+                        Janice Hume, Sales Ops, Flint Tropics
+                      </p>
+                    </div>
+                    <div class="row"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="vpadding">
+                    <div class="col-sm-2 bpadding" style="text-align: center">
+                      <img
+                        src="/images/placeholder.php?width=130&amp;height=130"
+                        alt="placeholder image"
+                      />
+                    </div>
+                    <!-- col-xs-2 -->
+                    <div class="col-sm-10">
+                      <p>
+                        "The reports available on the Ignite platform are better
+                        than I've seen over my 25+ years in the industry. I know
+                        they are keeping ahead of the curve in delivering this
+                        service. I would recommend this platform to all of my
+                        industry colleagues." - Roberto Pallante, VP, Aperture
+                        Labs
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <!-- table -->
+            </div>
+            <!-- container -->
+          </div>
+          <!-- div-md-8 -->
+          <div class="col-md-4 vpadding">
+            <div class="editable">%%content%%</div>
+          </div>
+        </div>
+        <!-- row vpadding -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- block -->
+  
+    <div class="block-two vpadding bgcolour">
+      <div class="container" pardot-region="block_two_table">
+        <table class="editable-table 3col">
+          <tr>
+            <td class="hpadding">
+              <h3>Onboarding</h3>
+              <p>
+                Talk to one of our experts today on strategies for successful
+                onboarding and for getting the most out of your investment.
+              </p>
+            </td>
+            <td class="hpadding">
+              <h3>Customization</h3>
+              <p>
+                Not getting the most value out of your current platform? Our
+                experts will share best practices based on your objective.
+              </p>
+            </td>
+            <td class="hpadding">
+              <h3>Execution</h3>
+              <p>
+                Speak to us today to determine if a LenoxSoft consultant may be
+                a good fit to help you manage your platform on an ongoing basis.
+              </p>
+            </td>
+          </tr>
+        </table>
+        <!-- table -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- block-one vpadding -->
+
+    <div class="grey clearfix">
+      <div class="container vpadding">
+        <div class="row">
+          <footer>
+            <div class="col-sm-6 clearfix" pardot-region="nav-footer">
+              <div class="social">
+                <div class="editable" >
+                    <a
+            href="https://www.powerjacks.com/portal/login"
+            target="_blank"
+            style="text-align: right;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 400;
+            padding: 5px 8px 5px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #fff;"
+            > General Enquiry</a>
+            <a
+            href="https://www.powerjacks.com/portal/login&redirect=cad"
+            target="_blank"
+            style="text-align: right;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 400;
+            padding: 5px 8px 5px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #fff;"
+            > Site Map</a>
+            <a
+            href="https://www.powerjacks.com/portal/login&redirect=product_selector"
+            target="_blank"
+            style="text-align: right;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 400;
+            padding: 5px 8px 5px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #fff;"
+            > Privacy Policy</a>
+            <a
+            href="https://www.powerjacks.com/contact-us"
+            target="_blank"
+            style="text-align: right;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 400;
+            padding: 5px 8px 5px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #fff;"
+            > Cookie Policy</a >
+            <a
+            href="https://www.powerjacks.com/contact-us"
+            target="_blank"
+            style="text-align: right;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 400;
+            padding: 5px 8px 5px;
+            letter-spacing: 0.001em;
+            border-right: solid 1px #fff;"
+            > Terms & Conditions</a >
+                </div>
+                <!-- editable -->
+              </div>
+              <!-- social -->
+            </div>
+            <!-- col-md-9 -->
+            <div class="col-sm-6 clearfix" pardot-region="footer-text">
+              <div class="editable pull-right">
+                <a href="" style="color:#fff; font-size: 13px; padding: 0 5px;" class="facebook"> Facebook </a>
+                <a href="" style="color:#fff; font-size: 13px; padding: 0 5px;" class="linkedin"> LinkedIn </a>
+                <a href="" style="color:#fff; font-size: 13px; padding: 0 5px;" class="twitter"> Twitter </a>
+              
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- grey -->
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+      integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /* --------------------------------------------------------------
+        FUNCTIONS
+    ----------------------------------------------------------------- */
+      /**
+       * Replace all occurences of https://simplesharebuttons.com in the
+       * social sharing list with the url of this page, and all occurrence
+       * of "Check this out" with the page title
+       */
+      $(".social-list a").each(function () {
+        // get values
+        var thisPage = window.location.href;
+        var url = $(this).attr("href");
+
+        // get title of this page
+        var title = $(document).find("title").text();
+
+        // replace values
+        url = url.replace("http://www.pardot.com", thisPage);
+        url = url.replace("template-title", title);
+
+        //update value of the link anchor
+        $(this).attr("href", url);
+      });
+
+      /**
+       * Pardot label alignment fix
+       */
+      pardot.$(function () {
+        var $ = window.pardot.$;
+        // Add label-left class to the <form> if label alignment is set to Default or Left in form styling
+        var $labelAlignment = $("#pardot-form .field-label").css("float");
+        if ($labelAlignment == "left") {
+          $("#pardot-form").addClass("label-left");
+        }
+      });
+    </script>
+  </body>
+</html>
